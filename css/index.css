@@ -1,0 +1,55 @@
+@charset "UTF-8";
+/**
+ * 
+ * @authors start_heart (you@example.org)
+ * @date    2015-02-12 15:09:25
+ * @version 1.0
+ */
+.sidebar {
+  height: 100%;
+  background: #7DB343;
+  position: fixed;
+  padding: 0px;
+}
+.logo {
+  background: url(../image/Logo.jpg) top left no-repeat;
+  background-size: 25%;
+}
+.logo h4 {
+  text-align: center;
+  margin-bottom: 0px;
+  margin-top: 3px;
+  padding-bottom: 40px;
+}
+.logo h4:first-child {
+  margin-top: 10px;
+  padding-top: 5px;
+  padding-bottom: 0px;
+}
+.nav-sidebar {
+  height: 100%;
+  background-color: #313541;
+  color: #fff;
+}
+.nav-sidebar li a:link {
+  background-color: #313541;
+}
+.nav-sidebar li a:visited {
+  background-color: #313541;
+}
+.nav-sidebar li a:hover {
+  background-color: #2C2F35;
+}
+.nav-sidebar li a:active {
+  background-color: #2C2F35;
+}
+.main {
+  padding: 0;
+}
+.content {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.submenu {
+  display: none;
+}
