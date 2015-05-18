@@ -1,0 +1,15 @@
+{
+  "name": "managesystem",
+  "description": "管理系统",
+  "launch_path": "/index.php",
+  "icons": {
+    "16": "/icons/icon16x16.png",
+    "48": "/icons/icon48x48.png",
+    "60": "/icons/icon60x60.png",
+    "128": "/icons/icon128x128.png"
+  },
+  "developer": {
+    "name": "start_heart",
+    "url": "ixuanlun.com"
+  }
+}

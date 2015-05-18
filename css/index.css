@@ -5,6 +5,15 @@
  * @date    2015-02-12 15:09:25
  * @version 1.0
  */
+body {
+  font-family: arial,"Microsoft Yahei","Hiragino Sans GB",sans-serif;
+}
+a {outline: none;}
+a:link {text-decoration: none;}
+a:visited {text-decoration: none;}
+a:hover {text-decoration: none;color: #fff;}
+a:active {star:expression_r(this.onFocus=this.blur());}
+a:focus { outline:0; }
 .sidebar {
   height: 100%;
   background: #7DB343;
@@ -31,17 +40,25 @@
   background-color: #313541;
   color: #fff;
 }
-.nav-sidebar li a:link {
-  background-color: #313541;
+.tab-wrapper > a {
+  display: block;
+  width: 100%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 20px;
 }
-.nav-sidebar li a:visited {
-  background-color: #313541;
+.tab-wrapper > a:hover {
+  background-color: #222;
+  text-decoration: none;
 }
-.nav-sidebar li a:hover {
-  background-color: #2C2F35;
+.tab-menuWrapper {
+  display: none;
 }
-.nav-sidebar li a:active {
-  background-color: #2C2F35;
+.tab-contentWrapper {
+  display: none;
+}
+.tab-contentWrapper a {
+  color: #337ab7;
 }
 .main {
   padding: 0;
@@ -49,7 +66,4 @@
 .content {
   padding-left: 15px;
   padding-right: 15px;
-}
-.submenu {
-  display: none;
 }

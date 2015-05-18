@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="zh-en">
+<head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>农业管理系统登录</title>
+<meta name="description" content="农业管理系统登录">
+<meta name="keywords" content="农业管理系统">
+<link rel="stylesheet" type="text/css" href="css/base.css">
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+<link href="css/login.css" rel="stylesheet">
+</head>
+<body>
+
+    <!--通过$_SESSION['user_id']进行判断，如果用户未登录，则显示登录表单，让用户输入用户名和密码-->
+
+        <!-- $_SERVER['PHP_SELF']代表用户提交表单时，调用自身php文件 -->
+    <form action="login.php" method="post" class="form">
+        <h2>基于RFID的管理系统登录</h2>
+
+        <div class="form-group">
+            <label for="username">账号：</label>
+            <input type="text" class="form-control" id="username" placeholder="输入用户名" name="username"></div>
+        <div class="form-group">
+            <label for="password">密码：</label>
+            <input type="password" class="form-control" id="password" placeholder="输入密码" name="password"></div>
+        <div class="form-submit">
+        <input type="submit" class="btn btn-primary" value="登录" name="submit">
+        <a href="#" class="form-pwForget">忘记密码</a>
+        </div>
+    </form>
+</body>
+</html>
