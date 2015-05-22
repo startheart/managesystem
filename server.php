@@ -20,7 +20,7 @@ $time = date("h:i:sa");
 //echo $time;
 if(!mysql_query("SELECT * FROM ".$sign_form_today))
 	{ 
-		$query="create table ".$sign_form_today."(id int(10) NOT NULL AUTO_INCREMENT,PRIMARY KEY(id),name varchar(20) NOT NULL,number varchar(20) not null,place varchar(20) NOT NULL,time time)";
+		$query="create table ".$sign_form_today."(id int(10) NOT NULL AUTO_INCREMENT,PRIMARY KEY(id),name varchar(20) NOT NULL,number varchar(20) not null,place打卡地点 varchar(20) NOT NULL,time打卡时间 time)";
 		$result=$folie->excu($query);
 	}
 
@@ -73,18 +73,24 @@ do {
        if($buf = socket_read($msgsock,8192)){ 
           var_dump($buf);
        		$jsondecode = json_decode($buf);
-          //查找打卡人详细信息
-       		$query1 = "select * from workerlist where number='$jsondecode->num'";
-       		$result1 = $folie->excu($query1);
-       		$row1 = mysql_fetch_array($result1);
-          //查找打卡位置
-          var_dump($jsondecode->pos);
-          $query2 = "select * from signposition where pos='$jsondecode->pos'";
-          $result2 = $folie->excu($query2);
-          $row2 = mysql_fetch_array($result2);
-          var_dump($row2['name']);
-       		$query3="INSERT INTO ".$sign_form_today."(name,number,place,time) VALUES ('{$row1['name']}','{$row1['number']}', '{$row2['name']}', curtime())";
-	   		$folie->excu($query3);
+          $query = "select * from ".$sign_form_today." where number='$jsondecode->num'";
+          $result = $folie->excu($query);
+          //查看打卡人是否已经打过卡
+          if(mysql_num_rows($result)==0) {
+            //查找打卡人详细信息
+            $query1 = "select * from workerlist where number='$jsondecode->num'";
+            $result1 = $folie->excu($query1);
+            $row1 = mysql_fetch_array($result1);
+            //查找打卡位置
+            var_dump($jsondecode->pos);
+            $query2 = "select * from signposition where pos='$jsondecode->pos'";
+            $result2 = $folie->excu($query2);
+            $row2 = mysql_fetch_array($result2);
+            var_dump($row2['name']);
+            $query3="INSERT INTO ".$sign_form_today."(name,number,place打卡地点,time打卡时间) VALUES ('{$row1['name']}','{$row1['number']}', '{$row2['name']}', curtime())";
+            $folie->excu($query3);
+          }
+          
 	   		/*if ($count<=1) {
 	   			$count++;
 	   			break;

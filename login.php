@@ -5,12 +5,14 @@
  * @date    2015-05-18 10:53:48
  * @version $Id$
  */
-
+header("Content-type: text/html; charset=utf-8");
+include "FirePHPCore-0.3.2/lib/FirePHPCore/fb.php";
 include "inc/mysql.php";
 $folie = new mysql;
 $connect = $folie->link("");
 //开启一个会话
 session_start();
+
 $error_msg = "";
 //如果用户未登录，即未设置$_SESSION['user_id']时，执行以下代码
 if(!isset($_SESSION['user_id'])){

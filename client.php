@@ -46,7 +46,7 @@ if ($result < 0) {
     echo "连接OK\n";
 }
 
-$array = array("num" => "2012019060006","pos" => "B234");
+$array = array("num" => "2012019060024","pos" => "C210");
 /**
  * [$jsonencode 模拟底层发送的数据，格式为 '{"num":"2012019060024","pos":"C100"}' ]
  * @var [string]

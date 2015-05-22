@@ -53,4 +53,51 @@
  			$($tabMenus[this._index]).css({ "color": "#fff"});
  		};
  	};
+	$('#signData').highcharts({
+		chart: {
+			type: 'areaspline'
+		},
+		title: {
+			text: '员工考勤周数据'
+		},
+		legend: {
+			layout: 'vertical',
+			align: 'left',
+			verticalAlign: 'top',
+			x: 150,
+			y: 100,
+			floating: true,
+			borderWidth: 1,
+			backgroundColor: '#FFFFFF'
+		},
+		xAxis: {
+			categories: ['周日', '周一', '周二', '周三', '周四', '周五','周六']
+		},
+		yAxis: {
+			floor: 0,
+			title: {
+				text: '人数'
+			}
+		},
+		tooltip: {
+			shared: true,
+			valueSuffix: '人'
+		},
+		credits: {
+			text: '晨电智能科技有限公司', // 显示的文字
+			href: 'http://www.ixuanlun.com' // 链接地址
+		},
+		plotOptions: {
+			areaspline: {
+				fillOpacity: 0.5
+			}
+		},
+		series: [{
+			name: '应到人数',
+			data: [200,210,220,200,230,240,235]
+		}, {
+			name: '实到人数',
+			data: [195,200,210,190,210,220,210]
+		}]
+	});
  })();
